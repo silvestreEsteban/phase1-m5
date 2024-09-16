@@ -1,7 +1,9 @@
 #! /usr/bin/env node
 import mongoose from "mongoose";
-import Item from "./commands/itemStructure.js";
+import Item from "./commands/model.js";
+import seedData from "./seedData/seed.js";
 import { Command } from "commander";
+import { faker } from "@faker-js/faker";
 
 mongoose.Promise = global.Promise;
 const db = mongoose.connect("mongodb://127.0.0.1:27017/itemListings", {});

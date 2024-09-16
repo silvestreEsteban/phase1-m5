@@ -13,11 +13,17 @@
     "chalk": "^5.3.0",
     "commander": "^12.1.0",
     "conf": "^13.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
     "inquirer": "^11.0.1",
     "mongoose": "^8.6.2"
   },
   "bin": {
-    "run": "./index.js"
+    "list": "./commands/commands.js"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@faker-js/faker": "^9.0.1"
+  }
 }

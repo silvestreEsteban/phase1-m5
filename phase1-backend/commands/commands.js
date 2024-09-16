@@ -1,5 +1,8 @@
 #! /usr/bin/env node
 import { Command } from "commander";
+import Item from "./model.js";
+import seedData from "../seedData/seed.js";
+import { faker } from "@faker-js/faker";
 const program = new Command();
 import {
   addListing,
@@ -8,6 +11,7 @@ import {
   deleteListing,
   listAllListings,
 } from "../index.js";
+
 import inquirer from "inquirer";
 const prompt = inquirer.createPromptModule();
 const questions = [
@@ -84,5 +88,12 @@ program
   .action(() => {
     listAllListings();
   });
+
+//   seed data
+program
+  .command("seed")
+  .alias("s")
+  .description("Seed the database with fake data")
+  .action(seedData);
 
 program.parse(process.argv);
