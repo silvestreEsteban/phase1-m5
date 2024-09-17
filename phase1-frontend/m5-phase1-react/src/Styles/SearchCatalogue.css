@@ -31,17 +31,23 @@
 }
 
 .search-results {
-    width: 50%;
+    width: 70%;
     height: 1400px;
-    border: #272626 2px solid;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 
 
 .search-result p {
     margin-left: 20px;
-    max-width: 200px;
+    max-width: 260px;
+    min-width: 260px;
+    background-color: lightyellow;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
