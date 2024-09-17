@@ -5,10 +5,11 @@ import seedData from "./seedData/seed.js";
 import { Command } from "commander";
 import { faker } from "@faker-js/faker";
 
+const mongoURI = "mongodb://127.0.0.1:27017/itemListings";
 mongoose.Promise = global.Promise;
-const db = mongoose.connect("mongodb://127.0.0.1:27017/itemListings", {});
+const db = mongoose.connect(mongoURI, {});
 const program = new Command();
-program.version("1.0.0");
+program.version("1.0.0").description("CLI for managing listings");
 
 const addListing = (listing) => {
   Item.create(listing).then((_listing) => {
