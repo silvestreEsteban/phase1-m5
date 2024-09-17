@@ -1,5 +1,7 @@
-import './Styles/layout.css';
+import './styles/layout.css';
 import Header from './Components/Header';
+import Info from './Components/Info';
+import SearchCatalogue from './Components/SearchCatalogue';
 function App() {
  
 
@@ -7,6 +9,8 @@ function App() {
     <>
       <div className="layout-of-page">
         <Header />
+        <Info />
+        <SearchCatalogue />
       </div>
     </>
   )

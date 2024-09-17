@@ -5,7 +5,7 @@
 
 .top-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 20px;
     background-color: #f8f9fa;
@@ -18,4 +18,85 @@
     background-color: #dedfdf;
     display: flex;
     justify-content: space-between;
+}
+
+.container-for-top-header-buttons-left button,
+.container-for-top-header-buttons-right button {
+    background-color: #f8f9fa;
+    border: none;
+    color: grey;
+    outline: none;
+    max-width: 150px;
+    font-size: 10px;
+}
+
+.container-for-top-header-buttons-left button:hover,
+.container-for-top-header-buttons-right button:hover {
+    border-bottom: 0.5px solid #8f9092;
+    border-radius: 0;
+
+}
+
+.container-for-top-header-buttons-left {
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.container-for-top-header-buttons-right {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.container-for-top-header-buttons-left button,
+.container-for-top-header-buttons-right button {
+    margin-left: 20px;
+}
+
+.bottom-header-button {
+    background-color: #dedfdf;
+    border: none;
+    color: grey;
+    outline: none;
+    max-width: 150px;
+    font-size: 16px;
+}
+
+.bottom-header {
+    display: flex;
+    align-items: center;
+}
+
+#trademe-logo {
+    width: 60px;
+    height: 30px;
+    margin-left: 30px;
+    outline: none;
+    border: none;
+}
+
+.container-for-bottom-header-buttons-left {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-for-bottom-header-buttons-right {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-for-bottom-header-buttons-right button {
+    margin-right: 20px;
+}
+
+.bottom-header-button:hover {
+    outline: none;
+    border: none;
 }
