@@ -11,7 +11,7 @@ const SearchCatalogue = () => {
         const query = e.target.value;
         setSearch(query);
 
-        if (query.length > 2) { // Fetch suggestions if query length is greater than 2
+        if (query.length > 2) { 
             const fetchedSuggestions = await fetchSuggestions(query);
             setSuggestions(fetchedSuggestions);
         } else {
