@@ -7,8 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// const SEARCH_API_KEY = process.env.SEARCH_API_KEY;
 const PORT = process.env.PORT || 4000;
 const dbUri = process.env.DB_URI;
+// const customSearchUri = `https://www.googleapis.com/customsearch/v1?key=${SEARCH_API_KEY}&cx=163cac5c633fb4ee1&num=5`;
 
 mongoose
   .connect(dbUri, {})
@@ -60,6 +62,42 @@ app.post("/catalogue/listings/search", (req, res) => {
       console.log("Error fetching data", error);
       res.status(500).send("Error fetching data");
     });
+});
+
+// app.post("/search", async (req, res) => {
+//   const query = req.body.query;
+//   if (!query) {
+//     return res.status(400).send("Query is required");
+//   }
+
+//   const searchUri = `${customSearchUri}&q=${encodeURIComponent(query)}`;
+//   try {
+//     const response = await fetch(searchUri);
+//     const data = await response.json();
+//     const itemTitles = data.items.map((item) => item.title);
+//     res.json(itemTitles);
+//   } catch (error) {
+//     console.log("Error fetching data", error);
+//     res.status(500).send("Error fetching data");
+//   }
+// });
+
+app.post("/search", async (req, res) => {
+  const query = req.body.query;
+  if (!query) {
+    return res.status(400).send("Query is required");
+  }
+
+  try {
+    const items = await Item.find({ title: new RegExp(query, "i") })
+      .limit(10)
+      .select("title");
+    const itemTitles = items.map((item) => item.title);
+    res.json(itemTitles);
+  } catch (error) {
+    console.log("Error fetching data", error);
+    res.status(500).send("Error fetching data");
+  }
 });
 
 app.listen(PORT, () => {

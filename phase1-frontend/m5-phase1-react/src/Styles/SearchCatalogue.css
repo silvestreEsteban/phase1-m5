@@ -16,7 +16,6 @@
 #catalogue-search-input {
     width: 50%;
     height: 30px;
-    margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #e0e0e0;
     padding: 5px;
@@ -32,22 +31,72 @@
 
 .search-results {
     width: 70%;
-    height: 1400px;
+    height: 700px;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin: 0 auto;
+
 }
 
 
 
 .search-result p {
-    margin-left: 20px;
+    margin-left: 50px;
     max-width: 260px;
     min-width: 260px;
     background-color: lightyellow;
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+@media screen and (max-width: 1000px) {
+    .search-results p {
+        margin-left: 20px;
+    }
+
+    .search-results {
+        height: 1400px;
+    }
+
+}
+
+.csm-div {
+    width: 1000px;
+    margin-left: 500px;
+}
+
+.suggestions {
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    width: 20%;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+#search-button {
+    margin-left: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+}
+
+#input-button-span {
+    height: 40px;
+    width: 840px;
+    display: flex;
+    align-items: center;
 
 }
